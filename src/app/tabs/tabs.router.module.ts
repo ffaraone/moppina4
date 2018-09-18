@@ -1,10 +1,12 @@
+import { TabsPage } from './tabs.page';
+import { BrowsePage } from '../browse/browse.page';
+import { NowPlayingPage } from '../now-playing/now-playing.page';
+import { QueuePage } from '../queue/queue.page';
+import { SearchPage } from '../search/search.page';
+import { SettingsPage } from '../settings/settings.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TabsPage } from './tabs.page';
-import { HomePage } from '../home/home.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
 
 const routes: Routes = [
   {
@@ -13,29 +15,39 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/tabs/(home:home)',
+        redirectTo: '/tabs/(now-playing:now-playing)',
         pathMatch: 'full',
       },
       {
-        path: 'home',
-        outlet: 'home',
-        component: HomePage
+        path: 'browse',
+        outlet: 'browse',
+        component: BrowsePage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
+        path: 'search',
+        outlet: 'search',
+        component: SearchPage
       },
       {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
-      }
+        path: 'now-playing',
+        outlet: 'now-playing',
+        component: NowPlayingPage
+      },
+      {
+        path: 'queue',
+        outlet: 'queue',
+        component: QueuePage
+      },
+      {
+        path: 'settings',
+        outlet: 'settings',
+        component: SettingsPage
+      },
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
+    redirectTo: '/tabs/(now-playing:now-playing)',
     pathMatch: 'full'
   }
 ];

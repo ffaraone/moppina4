@@ -1,0 +1,65 @@
+ion-content {
+    background-image: url('/src/assets/imgs/napoli.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.scroll-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+.mop-cover-image-box {
+    display: flex;
+    justify-content: left;
+    padding-left: 15px;
+}
+.mop-cover-image-box img {
+    height: 270px;
+    width: 270px;
+    opacity: 0.8;
+}
+.mop-center-box {
+    display: flex;
+    justify-content: space-between;
+}
+.mop-center-right-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 65%;
+}
+.mop-playback-buttons-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.mop-playback-skip-button {
+    opacity: 0.8;
+    zoom: 1.2;
+}
+.mop-playback-play-pause-button {
+    opacity: 0.8;
+    zoom: 2;
+}   
+.mop-volume-box {
+    width: 100%; 
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-top: 15px
+}
+.mop-seek-box {
+    width: 100%; 
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 15px
+}
+.mop-seek-icon {
+    zoom: 2;
+}
+.mop-volume-icon {
+    zoom: 2;
+}

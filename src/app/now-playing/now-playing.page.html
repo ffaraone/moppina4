@@ -1,0 +1,37 @@
+<ion-content [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+  <div class="mop-volume-box">
+      <ion-range min="0" max="100" color="primary" snap="true" step="5" [(ngModel)]="mp.state.volume" (ionBlur)="mp.setVolume()" debounce="0" [disabled]="!mopidyOnline">
+          <ion-icon slot="start" name="volume-mute" color="primary" class="mop-volume-icon"></ion-icon>
+          <ion-icon name="volume-high" slot="end" color="primary" class="mop-volume-icon"></ion-icon>
+      </ion-range>
+  </div>
+  <div class="mop-center-box">
+      <div class="mop-cover-image-box">
+          <img [src]="mp.state.albumArt">
+      </div>
+      <div class="mop-center-right-box">
+          <div class="mop-playback-buttons-box">
+                  <ion-fab-button color="primary" class="mop-playback-skip-button" (click)="mp.previous()" [disabled]="!mopidyOnline">
+                      <ion-icon name="skip-backward"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-button ion-fab color="primary" class="mop-playback-play-pause-button" (click)="mp.playPause()" [disabled]="!mopidyOnline">
+                      <ion-icon name="{{ mp.state.playbackState == 'playing' ? 'pause': 'play' }}"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-button ion-fab color="primary" class="mop-playback-skip-button" (click)="mp.next()" [disabled]="!mopidyOnline">
+                      <ion-icon name="skip-forward"></ion-icon>
+                  </ion-fab-button>
+          </div>
+          <div>
+              <h3 ion-text color="primary">{{ mp.state.trackName }}</h3>
+              <h5 ion-text color="primary-dark">{{ mp.state.trackInfo }}</h5>
+              <!-- <p ion-text color="primary-dark"><strong>{{ trackCodec | uppercase }}</strong> - {{ trackBitrate }}</p> -->
+          </div>
+      </div>
+  </div>
+  <div class="mop-seek-box">
+      <ion-range min="0" [max]="mp.state.trackLength" [(ngModel)]="mp.state.trackSeekPos" color="primary" (ionBlur)="mp.seek()" debounce="100" [disabled]="!mopidyOnline">
+          <ion-icon slot="start" name="rewind" color="primary" class="mop-seek-icon"></ion-icon>
+          <ion-icon name="fastforward" slot="end" color="primary" class="mop-seek-icon"></ion-icon>
+      </ion-range>
+  </div>
+</ion-content>

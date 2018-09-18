@@ -1,11 +1,17 @@
-<ion-tabs>
-  <ion-tab label="Home" icon="home" href="/tabs/(home:home)">
-    <ion-router-outlet name="home"></ion-router-outlet>
+<ion-tabs #myTabs tabbarLayout="icon-start" tabbarHighlight="true">
+  <ion-tab label="Browse" icon="book" href="/tabs/(browse:browse)">
+    <ion-router-outlet name="browse"></ion-router-outlet>
   </ion-tab>
-  <ion-tab label="About" icon="information-circle" href="/tabs/(about:about)">
-    <ion-router-outlet name="about"></ion-router-outlet>
+  <ion-tab label="Search" icon="search" href="/tabs/(search:search)">
+    <ion-router-outlet name="search"></ion-router-outlet>
   </ion-tab>
-  <ion-tab label="Contact" icon="contacts" href="/tabs/(contact:contact)">
-    <ion-router-outlet name="contact"></ion-router-outlet>
+  <ion-tab label="Now playing" icon="musical-notes" href="/tabs/(now-playing:now-playing)">
+    <ion-router-outlet name="now-playing"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="Queue" icon="browsers" href="/tabs/(queue:queue)">
+    <ion-router-outlet name="queue"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="Settings" icon="cog" href="/tabs/(settings:settings)">
+    <ion-router-outlet name="settings"></ion-router-outlet>
   </ion-tab>
 </ion-tabs>
