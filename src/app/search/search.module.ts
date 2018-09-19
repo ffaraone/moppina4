@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
+import { SearchPage } from './search.page';
+import { KeyboardComponent } from '../keyboard/keyboard.component';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { SearchPage } from './search.page';
+
 
 const routes: Routes = [
   {

@@ -1,5 +1,6 @@
 import { TabsPage } from './tabs.page';
 import { TabsPageRoutingModule } from './tabs.router.module';
+import { BrowseResultsPageModule } from '../browse-results/browse-results.module';
 import { BrowsePageModule } from '../browse/browse.module';
 import { NowPlayingPageModule } from '../now-playing/now-playing.module';
 import { QueuePageModule } from '../queue/queue.module';
@@ -8,7 +9,6 @@ import { SettingsPageModule } from '../settings/settings.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 
@@ -21,6 +21,7 @@ import { IonicModule } from '@ionic/angular';
     FormsModule,
     TabsPageRoutingModule,
     BrowsePageModule,
+    BrowseResultsPageModule,
     SearchPageModule,
     NowPlayingPageModule,
     QueuePageModule,

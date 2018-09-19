@@ -1,4 +1,5 @@
 import { TabsPage } from './tabs.page';
+import { BrowseResultsPage } from '../browse-results/browse-results.page';
 import { BrowsePage } from '../browse/browse.page';
 import { NowPlayingPage } from '../now-playing/now-playing.page';
 import { QueuePage } from '../queue/queue.page';
@@ -22,6 +23,11 @@ const routes: Routes = [
         path: 'browse',
         outlet: 'browse',
         component: BrowsePage
+      },
+      {
+        path: 'browse-results/:id',
+        outlet: 'browse',
+        component: BrowseResultsPage
       },
       {
         path: 'search',

@@ -1,9 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>browse-results</ion-title>
+  <ion-toolbar class="mop-navbar">
+      <ion-buttons slot="start">
+          <ion-button (click)="back()">
+              <ion-icon name="arrow-back"></ion-icon>&nbsp;Back
+          </ion-button>
+      </ion-buttons>
+    <ion-title>{{ mp.browseState.breadcrumb }}</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let ref of refs" (click)="browseOrPlay(ref)" [attr.detail-none]="ref.type == 'directory' ? null: 'true'">
+      <ion-spinner slot="start" name="bubbles" class="mop-results-icon" color="dark" *ngIf="loadingArts"></ion-spinner>
+      <ion-icon slot="start" *ngIf="ref.type == 'directory' && !ref.albumArt && !loadingArts" name="folder" class="mop-results-icon" color="dark"></ion-icon>
+      <ion-icon slot="start" *ngIf="ref.type != 'directory' && !ref.albumArt && !loadingArts" name="musical-notes" class="mop-results-icon" color="dark"></ion-icon>
+      <ion-thumbnail slot="start" *ngIf="ref.albumArt">
+          <img [src]="ref.albumArt">
+        </ion-thumbnail>
+      <ion-text color="primary"><h2>{{ ref.name }}</h2></ion-text>
+      <ion-button fill="outline" slot="end" color="primary" *ngIf="ref.type != 'directory'" size="large" (click)="showOptions(ref); $event.stopPropagation();"><ion-icon name="cog"></ion-icon></ion-button>
+      </ion-item>
+  </ion-list>
 </ion-content>

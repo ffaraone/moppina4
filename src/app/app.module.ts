@@ -11,12 +11,13 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { SearchPopoverComponent } from './search-popover/search-popover.component';
 
 @NgModule({
-  declarations: [AppComponent, KeyTextPipe, KeyboardComponent],
+  declarations: [AppComponent, KeyTextPipe, KeyboardComponent, SearchPopoverComponent],
   entryComponents: [],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot({
-    mode: 'ios'
+    mode: 'ios',
   }), IonicStorageModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,

@@ -10,7 +10,7 @@ import { Events } from '@ionic/angular';
 })
 export class NowPlayingPage {
 
-  mopidyOnline = false;
+  mopidyOnline = true;
   backgroundImage = '/src/assets/imgs/turntable.jpg';
 
   constructor(

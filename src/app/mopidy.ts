@@ -27,5 +27,25 @@ export class MopidyQueueItem {
 
 export class MopidyBrowseState {
     backends: any[] = [];
-    breadcrumb: string[] = [];
+    private refs: any[] = [];
+
+    get breadcrumb() {
+        return this.refs.map(ref => ref.name).join(' > ');
+    }
+
+    push(ref) {
+        this.refs.push(ref);
+    }
+    pop() {
+        this.refs.pop();
+    }
+    reset() {
+        this.refs = [];
+    }
+    get current() {
+        return this.refs.length === 0 ? null : this.refs.slice(-1)[0];
+    }
+    get length() {
+        return this.refs.length;
+    }
 }
