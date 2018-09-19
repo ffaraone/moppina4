@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar class="mop-navbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>&nbsp;Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Choose a theme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="changeTheme('')">Default</ion-item>
+    <ion-item (click)="changeTheme('autumn')">Autumn</ion-item>
+    <ion-item (click)="changeTheme('night')">Night</ion-item>
+    <ion-item (click)="changeTheme('neon')">Neon</ion-item>
+  </ion-list>
+</ion-content>

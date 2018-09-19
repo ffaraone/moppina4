@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>background</ion-title>
+  <ion-toolbar class="mop-navbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>&nbsp;Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Choose a background</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
 
+<ion-content class="card-background-page">
+  <ion-card *ngFor="let bg of backgrounds" (click)="setBackground(bg)">
+    <img src="{{ bg.path }}" />
+    <div class="card-title">{{ bg.name }}</div>
+  </ion-card>
 </ion-content>

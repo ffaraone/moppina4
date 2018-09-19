@@ -4,6 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">Look and feel</ion-item-divider>
+    <ion-item (click)="changeBackground()">Background image</ion-item>
+    <ion-item (click)="changeTheme()">Theme</ion-item>
+  </ion-item-group>
 </ion-content>

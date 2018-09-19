@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
   styleUrls: ['./settings.page.scss'],
 })
-export class SettingsPage implements OnInit {
+export class SettingsPage {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
-  ngOnInit() {
+  changeBackground() {
+    this.navCtrl.navigateForward('/background');
   }
-
+  changeTheme() {
+    this.navCtrl.navigateForward('/theme');
+  }
 }
