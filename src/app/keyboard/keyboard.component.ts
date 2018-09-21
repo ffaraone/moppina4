@@ -92,13 +92,13 @@ export class KeyboardComponent {
   getSpecialButtonIcon(key) {
     switch (key) {
       case '{bksp}':
-        return 'ios-backspace-outline';
+        return 'backspace';
       case '{tab}':
         return 'ios-arrow-round-forward-outline';
       case '{enter}':
         return 'search';
       case '{shift}':
-        return 'custom-shift';
+        return 'arrow-up';
       case '{alt}':
         return 'ios-arrow-dropup-outline';
       default:

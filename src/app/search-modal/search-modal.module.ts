@@ -1,8 +1,7 @@
-import { SearchPage } from './search.page';
-import { SearchModalPageModule } from '../search-modal/search-modal.module';
-import { SearchModalPage } from '../search-modal/search-modal.page';
+import { SearchModalPage } from './search-modal.page';
+import { ComponentsModule } from '../components.module';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
@@ -12,7 +11,7 @@ import { IonicModule } from '@ionic/angular';
 const routes: Routes = [
   {
     path: '',
-    component: SearchPage
+    component: SearchModalPage
   }
 ];
 
@@ -22,8 +21,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    SearchModalPageModule
+    ComponentsModule
   ],
-  declarations: [SearchPage]
+  declarations: [SearchModalPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SearchPageModule {}
+export class SearchModalPageModule {}

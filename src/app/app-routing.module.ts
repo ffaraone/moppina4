@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'queue', loadChildren: './queue/queue.module#QueuePageModule' },
   { path: 'search', loadChildren: './search/search.module#SearchPageModule' },
   { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
-  { path: 'theme', loadChildren: './theme/theme.module#ThemePageModule' }
+  { path: 'theme', loadChildren: './theme/theme.module#ThemePageModule' },
+  { path: 'search-modal', loadChildren: './search-modal/search-modal.module#SearchModalPageModule' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

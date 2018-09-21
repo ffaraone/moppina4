@@ -1,24 +1,37 @@
 import { MopidyService } from '../mopidy.service';
-import { Component, NgZone } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { SearchModalPage } from '../search-modal/search-modal.page';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Events, ModalController, PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
+
 
   resultsVisible = false;
   results: any;
   loadingArts = true;
 
+  searchModal: any;
+
   query = '';
 
   constructor(
     private zone: NgZone,
-    private popCtrl: PopoverController,
+    private events: Events,
+    private modalCtrl: ModalController,
     public mp: MopidyService) {
+  }
+
+  ngOnInit(): void {
+    this.events.subscribe('moppina:search', (query) => {
+      this.query = query;
+      this.searchModal.dismiss();
+      this.search();
+    });
   }
 
   search() {
@@ -79,21 +92,10 @@ export class SearchPage {
       // });
     });
   }
-  async showPopover(event) {
-    console.log(event);
-    const popover = await this.popCtrl.create({
-      component: 'app-search-popover',
-      event: event
+  async showModal() {
+    this.searchModal = await this.modalCtrl.create({
+      component: SearchModalPage
     });
-    popover.onDidDismiss().then(a => {
-      console.log(a);
-    });
-    /*
-(data) => {
-      this.query = data;
-      this.search();
-    }
-    */
-    await popover.present();
+    return await this.searchModal.present();
   }
 }
