@@ -42,7 +42,7 @@ export class LookAndFeelService {
     @Inject(DOCUMENT) private document: Document,
     private storage: Storage
   ) {
-    this.backgroundImage = new BehaviorSubject('/src/assets/imgs/turntable.jpg');
+    this.backgroundImage = new BehaviorSubject('assets/imgs/turntable.jpg');
     storage.get('theme').then(cssText => {
       this.setGlobalCSS(cssText);
     });

@@ -30,7 +30,7 @@ export class KeyboardComponent {
 
   constructor(private http: HttpClient) {
     console.log('keyboard component constructor');
-    this.http.get('/src/assets/keyboard/layouts.json').subscribe(
+    this.http.get('assets/keyboard/layouts.json').subscribe(
       (res) => {
         this.layout = res['es'];
         this.currentMap = this.layout.base;

@@ -1,4 +1,4 @@
-export const DEFAULT_ALBUM_ART = '/src/assets/imgs/default.png';
+export const DEFAULT_ALBUM_ART = 'assets/imgs/default.png';
 
 export enum MopidyPlaybackState {
     Stopped = 'stopped',

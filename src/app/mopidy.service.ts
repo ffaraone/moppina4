@@ -70,19 +70,19 @@ export class MopidyService {
   private updateBackendsIcon(refs) {
     for (const ref of refs) {
       if (ref.uri.startsWith('spotify')) {
-        ref.icon = '/src/assets/icon/spotify.svg';
+        ref.icon = 'assets/icon/spotify.svg';
       } else if (ref.uri.startsWith('dirble')) {
-        ref.icon = '/src/assets/icon/radio.svg';
+        ref.icon = 'assets/icon/radio.svg';
       } else if (ref.uri.startsWith('tunein')) {
-        ref.icon = '/src/assets/icon/tunein.svg';
+        ref.icon = 'assets/icon/tunein.svg';
       } else if (ref.uri.startsWith('podcast+file')) {
-        ref.icon = '/src/assets/icon/podcast.svg';
+        ref.icon = 'assets/icon/podcast.svg';
       } else if (ref.uri.startsWith('podcast+itunes')) {
-        ref.icon = '/src/assets/icon/itunes.svg';
+        ref.icon = 'assets/icon/itunes.svg';
       } else if (ref.uri.startsWith('file')) {
-        ref.icon = '/src/assets/icon/file-audio.svg';
+        ref.icon = 'assets/icon/file-audio.svg';
       } else {
-        ref.icon = '/src/assets/icon/musical-notes.svg';
+        ref.icon = 'assets/icon/musical-notes.svg';
       }
     }
   }

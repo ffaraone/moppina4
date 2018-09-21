@@ -11,7 +11,7 @@ import { Events } from '@ionic/angular';
 export class NowPlayingPage {
 
   mopidyOnline = true;
-  backgroundImage = '/src/assets/imgs/turntable.jpg';
+  backgroundImage = 'assets/imgs/turntable.jpg';
 
   constructor(
     private events: Events,
