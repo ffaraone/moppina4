@@ -1,9 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>queue</ion-title>
+  <ion-toolbar class="mop-navbar">
+    <ion-title>Queue</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="mp.shuffleQueue()">
+        <ion-icon slot="icon-only" name="shuffle"></ion-icon>
+      </ion-button>
+      <ion-button (click)="mp.clearQueue()">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content>
+  <div *ngIf="mp.queue.length > 0">
+    <ion-list>
+      <ion-reorder-group [disabled]="false">
+        <ion-item *ngFor="let track of mp.queue" (click)="mp.playQueueTrack(track)">
+          <ion-reorder slot="end"></ion-reorder>
+          <ion-thumbnail slot="start">
+            <img [src]="track.albumArt">
+          </ion-thumbnail>
+          <ion-text color="primary">
+            <h2>{{ track.name }}</h2>
+          </ion-text>
+          <ion-text color="dark">
+            <p>{{ track.trackInfo }}</p>
+          </ion-text>
+          <ion-icon *ngIf="track.current" slot="end" name="play"></ion-icon>
+        </ion-item>
+      </ion-reorder-group>
+    </ion-list>
+  </div>
+  <div *ngIf="mp.queue.length == 0" class="mop-no-results">
+    <ion-text color="primary">
+      <h1>Your queue is empty!</h1>
+    </ion-text>
+  </div>
 </ion-content>

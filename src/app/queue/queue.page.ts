@@ -1,3 +1,4 @@
+import { MopidyService } from '../mopidy.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './queue.page.html',
   styleUrls: ['./queue.page.scss'],
 })
-export class QueuePage implements OnInit {
+export class QueuePage {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private mp: MopidyService) {
   }
-
 }

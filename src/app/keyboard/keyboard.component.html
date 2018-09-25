@@ -3,7 +3,7 @@
   <div *ngIf="layout">
     <div *ngFor="let line of currentMap" class="mop-line">
       <div *ngFor="let key of line">
-        <ion-button *ngIf="isTextButton(key)" [ngClass]="getButtonClass(key)" class="mop-btn-std" (click)="buttonClicked(key)" color="primary" fill="outline">{{ key|keyText }}</ion-button>
+        <ion-button *ngIf="isTextButton(key)" [ngClass]="getButtonClass(key)" (click)="buttonClicked(key)" color="primary" fill="outline">{{ key|keyText }}</ion-button>
         <ion-button *ngIf="!isTextButton(key)" [ngClass]="getButtonClass(key)" (click)="buttonClicked(key)" color="primary" fill="outline">
           <ion-icon [name]="getSpecialButtonIcon(key)"></ion-icon>
         </ion-button>
